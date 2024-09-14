@@ -9,7 +9,7 @@ if [ $# -ne 7 ]; then
     exit 1
 fi
 
-#echo "Inputs received : $1 $2 $3 $4 $5 $6 $7"
+echo "Inputs received : $1 $2 $3 $4 $5 $6 "
 
 DEST=$1
 CLONE_URL=$2
@@ -18,6 +18,8 @@ JIRA_STORY=$4
 BRANCH=$5
 USERNAME=$6
 PASSWORD=$7
+
+echo "Inputs received : $DEST $CLONE_URL $GITHUB_UPLOAD_URL $JIRA_STORY $BRANCH $USERNAME "
 
 
 if [ $BRANCH == "plain_springboot" ]; then
