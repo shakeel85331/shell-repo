@@ -48,22 +48,13 @@ cd $DEST
 git init
 echo "initialized repository"
 
-# git config credential.username $USERNAME
-# git config credential.password $PASSWORD
-
-git config --global user.email "shakeel85331@yahoo.co.in"
-git config --global user.name $USERNAME
-git config --global user.password $PASSWORD
-
+git remote rm origin
 git remote add origin $CLONE_URL
 echo "Added remote as $CLONE_URL"
-# git config core.sparseCheckout true
-# echo "sample-project/" >> .git/info/sparse-checkout
+
 git pull origin $BRANCH
 echo "Checking out $BRANCH from $CLONE_URL"
 
-
-#mv sample-project/* .
 rm -rf .git
 echo "Removed git references"
 
@@ -94,6 +85,7 @@ echo "Successfully created the new git repo for $DEST"
 
 cd ..
 rm -rf $DEST
+
 
 
 
