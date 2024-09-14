@@ -48,6 +48,7 @@ cd $DEST
 git init
 echo "initialized repository"
 
+git remote rm origin
 git remote add origin $CLONE_URL
 echo "Added remote as $CLONE_URL"
 # git config core.sparseCheckout true
@@ -59,6 +60,9 @@ echo "Checking out $BRANCH from $CLONE_URL"
 #mv sample-project/* .
 rm -rf .git
 echo "Removed git references"
+
+echo "listing files at current directory"
+ls -lrt
 
 if [ -z "$(find . -mindepth 1 -maxdepth 1)" ]; then
     echo "$DEST Directory is empty, error checking out source code from template project."
