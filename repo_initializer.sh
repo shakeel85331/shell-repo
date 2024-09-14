@@ -49,6 +49,7 @@ git init
 echo "initialized repository"
 
 git config credential.username $USERNAME
+git config credential.password $PASSWORD
 
 git remote add origin $CLONE_URL
 echo "Added remote as $CLONE_URL"
