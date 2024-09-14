@@ -59,4 +59,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a script
-        run: sh test_shell.sh ${{ input.app-name}}
+        run: sh test_shell.sh ${{ inputs.app-name}}
