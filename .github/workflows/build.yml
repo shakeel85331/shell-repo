@@ -32,7 +32,7 @@ on:
         description: 'The is the jira story for the app creation'
         required: true
         type: string
-      github-usename:
+      github-username:
         description: 'Github Username'
         required: true
         type: string
