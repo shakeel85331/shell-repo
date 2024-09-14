@@ -34,24 +34,31 @@ else
 fi
 
 
-echo "Checking if a repo $DEST already exists"
-if [ -a $DEST ]; then
-    echo "$DEST already exists"
-    exit 3
-fi
+# echo "Checking if a repo $DEST already exists"
+# if [ -a $DEST ]; then
+#     echo "$DEST already exists"
+#     exit 3
+# fi
 
 mkdir -p $DEST
+echo "created directory  $DEST"
+
 cd $DEST
 
 git init
+echo "initialized repository"
+
 git remote add origin $CLONE_URL
+echo "Added remote as $CLONE_URL"
 # git config core.sparseCheckout true
 # echo "sample-project/" >> .git/info/sparse-checkout
 git pull origin $BRANCH
+echo "Checking out $BRANCH from $CLONE_URL"
 
 
 #mv sample-project/* .
 rm -rf .git
+echo "Removed git references"
 
 if [ -z "$(find . -mindepth 1 -maxdepth 1)" ]; then
     echo "$DEST Directory is empty, error checking out source code from template project."
