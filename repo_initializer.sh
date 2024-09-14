@@ -48,8 +48,12 @@ cd $DEST
 git init
 echo "initialized repository"
 
-git config credential.username $USERNAME
-git config credential.password $PASSWORD
+# git config credential.username $USERNAME
+# git config credential.password $PASSWORD
+
+git config --global user.email "shakeel85331@yahoo.co.in"
+git config --global user.name $USERNAME
+git config --global credential.helper "!f() { echo \`"username=`${USERNAME}`npassword=`${PASSWORD}\`"; }; f"
 
 git remote add origin $CLONE_URL
 echo "Added remote as $CLONE_URL"
