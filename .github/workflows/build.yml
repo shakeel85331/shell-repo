@@ -4,15 +4,42 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
+    inputs:
+      app-name:
+        description: 'The is the name of app you want to create'
+        required: true
+        type: string
+      template-app-github-location:
+        description: 'Github location of template app'
+        required: true
+        type: string
+        default: 'https://github.com/shakeel85331/movie-info-service'
+      app-uplaod-github-location:
+        description: 'Github location where newly create app needs to get uploaded'
+        required: true
+        type: string
+      app-type:
+        description: 'This is the type of app you want to create.'
+        required: true
+        type: choice
+        options:
+          - plain_springboot
+          - publisher_springboot
+          - consumer_springboot
+      jira-story:
+        description: 'The is the jira story for the app creation'
+        required: true
+        type: string
+      github-usename:
+        description: 'Github Username'
+        required: true
+        type: string
+      github-password-token:
+        description: 'Github location of template app'
+        required: true
+        type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,4 +59,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a script
-        run: sh test_shell.sh
+        run: sh test_shell.sh ${{ input.app-name}}
