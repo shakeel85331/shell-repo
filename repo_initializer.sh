@@ -68,7 +68,7 @@ git add .
 git commit -m "$JIRA_STORY : first commit"
 git branch -M main
 git remote add origin $GITHUB_UPLOAD_URL/$DEST.git
-curl -u $USERNAME:$PASSWORD https://github.gapinc.com/api/v3/user/repos -d '{"name":"'$DEST'"}'
+curl -u $USERNAME:$PASSWORD https://api.github.com/user/repos -d '{"name":"'$DEST'"}'
 git push -u origin main
 
 echo "Successfully created the new git repo for $DEST"
