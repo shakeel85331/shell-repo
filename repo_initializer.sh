@@ -49,7 +49,7 @@ git init
 echo "initialized repository"
 
 git remote rm origin
-git remote add origin $CLONE_URL
+git remote add origin https://$USERNAME:$PASSWORD@github.com/shakeel85331/movie-info-service.git
 echo "Added remote as $CLONE_URL"
 
 git pull origin $BRANCH
