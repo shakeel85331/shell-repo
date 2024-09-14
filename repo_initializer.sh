@@ -48,7 +48,8 @@ cd $DEST
 git init
 echo "initialized repository"
 
-git remote rm origin
+git config credential.username $USERNAME
+
 git remote add origin $CLONE_URL
 echo "Added remote as $CLONE_URL"
 # git config core.sparseCheckout true
