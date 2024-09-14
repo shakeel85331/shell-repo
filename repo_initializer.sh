@@ -22,11 +22,11 @@ PASSWORD=$7
 echo "Inputs received : $DEST $CLONE_URL $GITHUB_UPLOAD_URL $JIRA_STORY $BRANCH $USERNAME "
 
 
-if [ $BRANCH == "plain_springboot" ]; then
+if [ $BRANCH -eq "plain_springboot" ]; then
   echo "Request is for plain springboot project creation."
-elif [ $BRANCH == "publisher_springboot" ]; then
+elif [ $BRANCH -eq "publisher_springboot" ]; then
   echo "Request is for publisher springboot project creation."
-elif [ $BRANCH == "consumer_springboot" ]; then
+elif [ $BRANCH -eq "consumer_springboot" ]; then
   echo "Request is for consumer springboot project creation."
 else
   echo "Invalid APP_TYPE $BRANCH provided, exiting..."
