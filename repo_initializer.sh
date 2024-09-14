@@ -74,6 +74,8 @@ mv movie-info-service $DEST
 
 echo "Pushing the new repo $DEST to github"
 git init
+
+echo "Adding files"
 git add .
 git commit -m "$JIRA_STORY : first commit"
 git branch -M main
