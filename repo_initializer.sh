@@ -19,11 +19,11 @@ USERNAME=$7
 PASSWORD=$8
 
 
-if [ $BRANCH == "plain_springboot" ]; then
+if [ $BRANCH = "plain_springboot" ]; then
   echo "Request is for plain springboot project creation."
-elif [ $BRANCH == "publisher_springboot" ]; then
+elif [ $BRANCH = "publisher_springboot" ]; then
   echo "Request is for publisher springboot project creation."
-elif [ $BRANCH == "consumer_springboot" ]; then
+elif [ $BRANCH = "consumer_springboot" ]; then
   echo "Request is for consumer springboot project creation."
 else
   echo "Invalid APP_TYPE $BRANCH provided, exiting..."
