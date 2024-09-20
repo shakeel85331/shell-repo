@@ -15,7 +15,12 @@ on:
         description: 'Github location of template app'
         required: true
         type: string
-        default: 'https://github.com/shakeel85331/movie-info-service'
+        default: 'https://github.com/shakeel85331'
+      template-app-name:
+        description: 'Template app name'
+        required: true
+        type: string
+        default: 'movie-info-service'
       app-uplaod-github-location:
         description: 'Github location where newly create app needs to get uploaded'
         required: true
@@ -59,4 +64,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a script
-        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ inputs.github-username}} ${{ inputs.github-password-token}}
+        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.template-app-name }} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ inputs.github-username}} ${{ inputs.github-password-token}}
