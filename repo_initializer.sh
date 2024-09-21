@@ -49,10 +49,7 @@ fi
 CLONE_REPO_URL=$CLONE_URL"/"$CLONE_REPO
 echo $CLONE_REPO_URL
 
-str=$CLONE_REPO_URL
-find="https://"
-replace="https://$USERNAME:$PASSWORD@"
-USER_PADED_CLONE_REPO_URL=${str//$find/$replace}
+USER_PADED_CLONE_REPO_URL=$(echo $CLONE_REPO_URL | sed -e "s/https:\/\//https:\/\/$USERNAME:$PASSWORD@/g")
 echo $USER_PADED_CLONE_REPO_URL
 
 git clone $USER_PADED_CLONE_REPO_URL
@@ -72,7 +69,7 @@ else
 fi
 
 echo "Configuring the cloned repo based on the input."
-find . -type f | xargs perl -pi -e 's/#APPNAME#/'$DEST'/g;'
+find . -type f | xargs perl -pi -e 's/test-project-2/'$DEST'/g;'
 mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
