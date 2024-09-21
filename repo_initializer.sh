@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sh repo_initializer.sh test-project-1 https://github.com/shakeel85331 movie-info-service https://github.com/shakeel85331 TEST-000 plain_springboot shakeel85331 githubtoken
+# sh repo_initializer.sh test-project-1 https://github.com/shakeel85331 movie-info-service https://github.com/mshakeel-projects TEST-000 plain_springboot shakeel85331 githubtoken
 
 echo "Checking if all the mandatory parameters are provided."
 if [ $# -ne 8 ]; then
@@ -49,7 +49,13 @@ fi
 CLONE_REPO_URL=$CLONE_URL"/"$CLONE_REPO
 echo $CLONE_REPO_URL
 
-git clone $CLONE_REPO_URL
+str=$CLONE_REPO_URL
+find="https://"
+replace="https://$USERNAME:$PASSWORD@"
+USER_PADED_CLONE_REPO_URL=${str//$find/$replace}
+echo $USER_PADED_CLONE_REPO_URL
+
+git clone $USER_PADED_CLONE_REPO_URL
 mv $CLONE_REPO $DEST
 cd $DEST
 git checkout $BRANCH
@@ -82,7 +88,3 @@ echo "Successfully created the new git repo for $DEST"
 
 cd ..
 rm -rf $DEST
-
-
-
-
