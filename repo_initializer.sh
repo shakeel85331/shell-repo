@@ -74,8 +74,8 @@ mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
 
-echo "Github username : ${{ github.actor }}"
-echo "Github useremail : ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+echo "${{ github.actor }}"
+echo "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
 
 git config user.name "${{ github.actor }}"
 git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
