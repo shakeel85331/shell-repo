@@ -75,10 +75,10 @@ mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
 
-echo $GIT_USER_NAME
+echo $USERNAME
 echo $GIT_USER_EMAIL
 
-git config user.name "$GIT_USER_NAME"
+git config user.name "$USERNAME"
 git config user.email "$GIT_USER_EMAIL"
 echo "git username and email setup"
 
