@@ -76,7 +76,7 @@ echo "Pushing the new repo $DEST to github"
 git init
 git add .
 git commit -m "$JIRA_STORY : first commit"
-git branch -M main
+git branch -m main
 git remote add origin $GITHUB_UPLOAD_URL/$DEST".git"
 curl -u $USERNAME:$PASSWORD https://api.github.com/orgs/mshakeel-projects/repos -d '{"name":"'$DEST'"}'
 git push -u origin main
