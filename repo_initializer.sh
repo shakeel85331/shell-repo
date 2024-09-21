@@ -79,7 +79,7 @@ echo $USERNAME
 echo $GIT_USER_EMAIL
 
 git config --global user.name "shakeel85331"
-git config --global user.email "shakeel85331@yahoo.co.in"
+git config --global user.email "11576793+shakeel85331@users.noreply.github.com"
 echo "git username and email setup"
 
 git init
