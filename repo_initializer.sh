@@ -17,6 +17,8 @@ JIRA_STORY=$5
 BRANCH=$6
 USERNAME=$7
 PASSWORD=$8
+GIT_USER_NAME=$9
+GIT_USER_EMAIL=$10
 
 
 if [ $BRANCH = "plain_springboot" ]; then
@@ -74,11 +76,11 @@ mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
 
-echo "${{ github.actor }}"
-echo "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+echo $GIT_USER_NAME
+echo $GIT_USER_EMAIL
 
-git config user.name "${{ github.actor }}"
-git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+git config user.name "$GIT_USER_NAME"
+git config user.email "$GIT_USER_EMAIL"
 echo "git username and email setup"
 
 git init
