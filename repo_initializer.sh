@@ -17,8 +17,7 @@ JIRA_STORY=$5
 BRANCH=$6
 USERNAME=$7
 PASSWORD=$8
-GIT_USER_NAME=$9
-GIT_USER_EMAIL=$10
+GIT_USER_EMAIL=$9
 
 
 if [ $BRANCH = "plain_springboot" ]; then
