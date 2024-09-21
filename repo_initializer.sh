@@ -69,7 +69,7 @@ else
 fi
 
 echo "Configuring the cloned repo based on the input."
-find . -type f | xargs perl -pi -e 's/test-project-2/'$DEST'/g;'
+find . -type f | xargs perl -pi -e 's/#APPNAME#/'$DEST'/g;'
 mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
