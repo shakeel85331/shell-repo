@@ -37,10 +37,6 @@ on:
         description: 'The is the jira story for the app creation'
         required: true
         type: string
-      github-username:
-        description: 'Github Username'
-        required: true
-        type: string
       github-password-token:
         description: 'Github Password Token'
         required: true
@@ -64,4 +60,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a script
-        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.template-app-name }} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ inputs.github-username}} ${{ inputs.github-password-token}} ${{ github.actor }} ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
+        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.template-app-name }} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ github.actor }} ${{ inputs.github-password-token}} ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
