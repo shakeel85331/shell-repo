@@ -3,7 +3,7 @@
 # sh repo_initializer.sh test-project-1 https://github.com/shakeel85331 movie-info-service https://github.com/mshakeel-projects TEST-000 plain_springboot shakeel85331 githubtoken
 
 echo "Checking if all the mandatory parameters are provided."
-if [ $# -ne 8 ]; then
+if [ $# -ne 10 ]; then
     echo "Usage: repo_initializer.sh NEW_REPO_NAME URL_FOR_REPO_TO_BE_CLONED GITHUB_UPLOAD_URL JIRA_STORY APP_TYPE"
     echo "APP_TYPE can be one of [plain_springboot, publisher_sprinboot, consumer_springboot]"
     exit 1
