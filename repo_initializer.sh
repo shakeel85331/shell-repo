@@ -78,8 +78,8 @@ echo "Pushing the new repo $DEST to github"
 echo $USERNAME
 echo $GIT_USER_EMAIL
 
-git config user.name "shakeel85331"
-git config user.email "shakeel85331@yahoo.co.in"
+git config --global user.name "shakeel85331"
+git config --global user.email "shakeel85331@yahoo.co.in"
 echo "git username and email setup"
 
 git init
