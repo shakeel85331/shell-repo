@@ -73,6 +73,10 @@ find . -type f | xargs perl -pi -e 's/#APPNAME#/'$DEST'/g;'
 mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
+
+git config --global user.name "Mohammed Shakeel"
+git config --global user.email "shakeel85331@yahoo.co.in"
+
 git init
 git add .
 git commit -m "$JIRA_STORY : first commit"
