@@ -64,4 +64,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a script
-        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.template-app-name }} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ inputs.github-username}} ${{ inputs.github-password-token}}
+        run: sh repo_initializer.sh ${{ inputs.app-name}} ${{ inputs.template-app-github-location}} ${{ inputs.template-app-name }} ${{ inputs.app-uplaod-github-location}} ${{ inputs.jira-story}} ${{ inputs.app-type}} ${{ inputs.github-username}} ${{ inputs.github-password-token}} ${{ github.actor }} ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
