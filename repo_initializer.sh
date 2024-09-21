@@ -69,15 +69,17 @@ else
 fi
 
 echo "Configuring the cloned repo based on the input."
-find . -type f | xargs perl -pi -e 's/#APPNAME#/'$DEST'/g;'
+find . -type f | xargs perl -pi -e 's/test-project-2/'$DEST'/g;'
 mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
 git init
 git add .
 git commit -m "$JIRA_STORY : first commit"
-git branch -m main
-git remote add origin $GITHUB_UPLOAD_URL/$DEST".git"
+git branch -M main
+UPLOAD_LOC=$GITHUB_UPLOAD_URL"/"$DEST".git"
+echo $UPLOAD_LOC
+git remote add origin $UPLOAD_LOC
 curl -u $USERNAME:$PASSWORD https://api.github.com/orgs/mshakeel-projects/repos -d '{"name":"'$DEST'"}'
 git push -u origin main
 
