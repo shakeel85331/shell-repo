@@ -76,16 +76,31 @@ echo "Pushing the new repo $DEST to github"
 
 git config --global user.name "Mohammed Shakeel"
 git config --global user.email "shakeel85331@yahoo.co.in"
+echo "git username and email setup"
 
 git init
+echo "git init done"
+
 git add .
+echo "git add done"
+
 git commit -m "$JIRA_STORY : first commit"
+echo "git commit done"
+
 git branch -m main
-git remote add origin $GITHUB_UPLOAD_URL/$DEST".git"
+echo "main branch setup done"
+
+git remote add origin $GITHUB_UPLOAD_URL/$DEST
+echo "remote setup done"
+
 curl -u $USERNAME:$PASSWORD https://api.github.com/orgs/mshakeel-projects/repos -d '{"name":"'$DEST'"}'
+echo "repo created on github"
+
 git push -u origin main
+echo "code pushed to origin"
 
 echo "Successfully created the new git repo for $DEST"
 
 cd ..
 rm -rf $DEST
+echo "local repo deleted on machine"
