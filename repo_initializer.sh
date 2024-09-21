@@ -90,7 +90,7 @@ echo "git commit done"
 git branch -m main
 echo "main branch setup done"
 
-git remote add origin $GITHUB_UPLOAD_URL/$DEST
+git remote set-url origin $GITHUB_UPLOAD_URL/$DEST
 echo "remote setup done"
 
 curl -u $USERNAME:$PASSWORD https://api.github.com/orgs/mshakeel-projects/repos -d '{"name":"'$DEST'"}'
