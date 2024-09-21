@@ -74,9 +74,9 @@ mv franchise-publisher-template-project $DEST
 
 echo "Pushing the new repo $DEST to github"
 
-#git config --global user.name "Mohammed Shakeel"
-#git config --global user.email "shakeel85331@yahoo.co.in"
-#echo "git username and email setup"
+git config --global user.name "Mohammed Shakeel"
+git config --global user.email "shakeel85331@yahoo.co.in"
+echo "git username and email setup"
 
 git init
 echo "git init done"
